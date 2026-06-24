@@ -38,42 +38,42 @@ export const navItems = [
 export const heroLogos = [
   {
     id: 1,
-    item: "/images/logo-1.png",
+    img: "/images/logo-1.png",
     width: 56,
   },
   {
     id: 2,
-    item: "/images/logo-2.png",
+    img: "/images/logo-2.png",
     width: 82,
   },
   {
     id: 3,
-    item: "/images/logo-3.png",
+    img: "/images/logo-3.png",
     width: 57,
   },
   {
     id: 4,
-    item: "/images/logo-4.png",
+    img: "/images/logo-4.png",
     width: 64,
   },
   {
     id: 5,
-    item: "/images/logo-5.png",
+    img: "/images/logo-5.png",
     width: 78,
   },
   {
     id: 6,
-    item: "/images/logo-6.png",
+    img: "/images/logo-6.png",
     width: 75,
   },
   {
     id: 7,
-    item: "/images/logo-7.png",
+    img: "/images/logo-7.png",
     width: 65,
   },
 ];
 
-export const benefitItems = [
+export const benefitimgs = [
   {
     id: 1,
     icon: "/images/icon-1.png",
@@ -112,7 +112,7 @@ export const benefitItems = [
   },
 ];
 
-export const coursesSecItems = [
+export const coursesSecimgs = [
   {
     id: 1,
     img: "/images/course-img-1.png",
@@ -163,7 +163,7 @@ export const coursesSecItems = [
   },
 ];
 
-export const testimonialsItems = [
+export const testimonialsimgs = [
   {
     id: 1,
     text: "The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!",
@@ -190,7 +190,7 @@ export const testimonialsItems = [
   },
 ];
 
-export const faqItems = [
+export const faqimgs = [
   {
     id: 1,
     title: "Can I enroll in multiple courses at once?",

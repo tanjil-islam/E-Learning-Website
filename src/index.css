@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-grey-15: #262625;
@@ -10,7 +10,7 @@
   --color-orange-70: #ffbf66;
   --color-orange-75: #ffca80;
   --color-orange-97: #fff9f0;
-  --font-dmSans: "DM Sans", sans-serif;
+  --font-dmSans: 'DM Sans', sans-serif;
 }
 
 @layer base {
@@ -47,6 +47,18 @@
   h4 {
     @apply text-2xl lg:text-[22px];
   }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @layer components {
@@ -73,14 +85,39 @@
   .primary-btn {
     @apply bg-orange-50 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-50/90 transition-colors;
   }
+  .secondary-btn {
+    @apply px-8 py-4 bg-white border border-white-95 rounded-md hover:bg-orange-90 transition-colors;
+  }
+  .play-btn {
+    animation: 2s pulseBtn ease infinite;
+  }
+  @keyframes pulseBtn {
+    0% {
+      box-shadow: 0 0 0 white;
+    }
+    100% {
+      box-shadow: 0 0 0 20px transparent;
+    }
+  }
 }
 
 /* Header */
 
-.navbar{
+.navbar {
   @apply lg:hidden fixed top-0 left-0 bg-white w-full h-screen flex flex-col items-center justify-center -translate-y-full transition-transform z-40;
 }
 
-.navbar.active{
+.navbar.active {
   @apply translate-y-0;
 }
+
+
+@theme {
+  /* your existing theme variables... */
+  --animate-marquee: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+} 
