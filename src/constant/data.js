@@ -163,7 +163,7 @@ export const coursesSecItems = [
   },
 ]
 
-export const testimonialsimgs = [
+export const testimonialsItems = [
   {
     id: 1,
     text: 'The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!',
@@ -190,7 +190,7 @@ export const testimonialsimgs = [
   },
 ]
 
-export const faqimgs = [
+export const faqItems = [
   {
     id: 1,
     title: 'Can I enroll in multiple courses at once?',
