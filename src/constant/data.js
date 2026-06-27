@@ -112,7 +112,7 @@ export const benefitItems = [
   },
 ]
 
-export const coursesSecimgs = [
+export const coursesSecItems = [
   {
     id: 1,
     img: '/images/course-img-1.png',
