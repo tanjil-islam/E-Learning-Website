@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import Title from './Title'
 import { faqItems } from '../constant/data'
 import { RiAddLine } from '@remixicon/react'
+import { motion } from 'motion/react'
+import * as variants from '../motion/animation'
+
 
 const FaqSec = () => {
   const [openId, setOpenId] = useState(faqItems[0].id ?? null)
@@ -10,7 +13,7 @@ const FaqSec = () => {
   }
   return (
     <section className='section pb-[90px] lg:mb-[160px]'>
-      <div className='container'>
+      <motion.div variants={variants.staggerContainer} initial='hidden' whileInView='show' viewport={{ once: true }} className='container'>
         <div className='grid gap-10 p-5 lg:grid-cols-[0.7fr_1fr] items-start bg-white rounded-lg md:p-10'>
           {/* Title */}
           <Title
@@ -22,7 +25,7 @@ const FaqSec = () => {
           <div className='border border-white-95 grid p-6'>
             {faqItems.map((item) => (
               // Question
-              <div className='space-y-3.5' key={item.id}>
+              <motion.div variants={variants.fadeInUp} className='space-y-3.5' key={item.id}>
                 {/* title */}
                 <div className='flex items-center justify-between gap-12 border-b border-b-white-95 pb-3 md:px-5'>
                   <h4 className='text-lg sm:text-xl'>{item.title}</h4>
@@ -43,11 +46,11 @@ const FaqSec = () => {
                 >
                   <p className='px-5 pb-3'>{item.text}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

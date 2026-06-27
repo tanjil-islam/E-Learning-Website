@@ -3,10 +3,19 @@ import Title from './Title'
 import { benefitItems } from '../constant/data'
 import {RiArrowRightUpLine} from '@remixicon/react'
 
+import { motion } from 'motion/react'
+import * as variants from '../motion/animation'
+
 const Benefits = () => {
   return (
     <section className='section'>
-      <div className='container'>
+      <motion.div
+        variants={variants.staggerContainer}
+        initial='hidden'
+        whileInView='show'
+        viewport={{ once: true }}
+        className='container'
+      >
         <Title
           title='Benefits'
           text='Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
@@ -17,7 +26,10 @@ const Benefits = () => {
         <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-12 lg:mt-16'>
           {benefitItems.map((item) => (
             //card
-            <div className='bg-white p-10 flex flex-col rounded-xl'>
+            <motion.div
+              variants={variants.fadeInUp}
+              className='bg-white p-10 flex flex-col rounded-xl'
+            >
               {/* icon */}
               <div className='bg-orange-75 w-[55%] h-24 flex items-center justify-center mx-auto rounded-xl mb-8'>
                 <img src={item.icon} alt={item.title} width={64} height={64} />
@@ -32,10 +44,10 @@ const Benefits = () => {
                text-orange-50 transition-colors hover:bg-orange-50 hover:text-white'>
                 <RiArrowRightUpLine size={26} />
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -5,11 +5,21 @@ import { RiArrowLeftLine, RiArrowRightLine } from '@remixicon/react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Navigation, Autoplay } from 'swiper/modules'
+import { motion } from 'motion/react'
+import * as variants from '../motion/animation'
+
+
 
 const Testimonials = () => {
   return (
     <section className='section'>
-      <div className='container'>
+      <motion.div
+        variants={variants.staggerContainer}
+        initial='hidden'
+        whileInView='show'
+        viewport={{ once: true }}
+        className='container'
+      >
         {/* Title */}
         <Title
           title='Our Testimonials'
@@ -18,7 +28,8 @@ const Testimonials = () => {
         />
 
         {/* Card Wrapper */}
-        <Swiper
+        <motion.div variants={variants.fadeInUp}> 
+          <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={30}
           breakpoints={{
@@ -70,8 +81,10 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </motion.div>
+        
         {/* Navigations btns */}
-        <div className='flex items-center justify-center mt-18 gap-5'>
+        <motion.div variants={variants.fadeInUp} className='flex items-center justify-center mt-18 gap-5'>
           <button
             className='bg-orange-70 w-12 h-12 flex items-center justify-center rounded-xl hover:bg-orange-75 transition-colors
           active:bg-orange-75/80 prev-btn'
@@ -84,8 +97,8 @@ const Testimonials = () => {
           >
             <RiArrowRightLine size={30} />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
